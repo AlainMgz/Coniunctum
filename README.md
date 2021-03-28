@@ -4,9 +4,9 @@ Made to open up blockchain technology to newcomers in the developing world.
 
 - Whitepaper available here : https://mega.nz/file/n5Bj2IyQ#2JzAfPyT5A2ERiEJSHj4EZJbbigx-1DywHWfhUYpnpM
 
-- Install Instructions :
+- Install Instructions (Linux only, for the moment):
   - Requirements : 
-    - Install pip (or make sure you have it, newest version recommended)
+    - Install Python 3+, python3-setuptools and python3-pip (or make sure you have it)
     - Install the following packages with pip : flask, requests, pyperclip
   - Run the coniunctum.py file with Python 3+.
   - For now the client only works on local network so if it's your first time running Coniunctum on your local network, please contact me for detailed installation      instructions.
