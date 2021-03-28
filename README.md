@@ -8,7 +8,9 @@ Made to open up blockchain technology to newcomers in the developing world.
   - Run the coniunctum.py file with Python 3+.
   - For now the client only works on local network so if it's your first time running Coniunctum on your local network, please contact me for detailed installation      instructions.
 
-- Contact : airwaks98701@protonmail.ch
+- Contact : 
+  - Email : airwaks98701@protonmail.ch
+  - Twitter : @adotmgz
 
 - Donations : 
   
