@@ -11,6 +11,7 @@ For now the client only works on local network so if it's your first time runnin
 Contact : airwaks98701@protonmail.ch
 
 Donations : Bitcoin BTC : bc1qp5yf67fq59cvkj00dsuh94usgvtr7ptte2q893
+
             Cardano ADA : addr1qxhcw33f7j9tppxr2dpfpnrz76laddly4pahks5pcpp5yzl7wqt86
                           frzq7ztcupgzwrt5f9w97v3t87v4rl6uxztkjuqwws8e9
 
