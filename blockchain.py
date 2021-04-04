@@ -9,7 +9,6 @@ Created on Mon Feb 22 09:46:30 2021
 import datetime
 import hashlib
 import json
-from flask import Flask, jsonify, request, send_file
 import requests
 from uuid import uuid4
 from urllib.parse import urlparse
@@ -17,6 +16,7 @@ import os
 import socket
 from modules.get_ip import get_local_ip
 import modules.chain_validation as chain_validation
+from client import req_blockchain
 
 class Blockchain:
     
@@ -126,25 +126,15 @@ class Blockchain:
         longest_chain = None
         max_length = len(self.chain)
         for node in network:
-            if node != f'http://{self.ip_local}:56230':
+            addr = node[7:19]
+            if addr != self.ip_local:
                 try:
-                    response = requests.get(f'{node}/get_chain')
-                    if response.status_code == 200:
-                        length = response.json()['length']
-                        chain = response.json()['chain']
-                        if length > max_length and self.is_chain_valid(chain):
-                            max_length = length
-                            longest_chain = chain
-                        else:
-                            pass
-                    else:
-                        print(f"Couldn't retrieve the blockchain from this node : {node}")
-                        pass
+                    req_blockchain(addr)
+                    return True
                 except OSError:
                     pass
+
             else:
                 pass
-        if longest_chain:
-            return self.replace_chain(longest_chain)
         return False
 

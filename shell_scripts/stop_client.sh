@@ -1,4 +1,2 @@
-shell_scripts/stop_miner.sh
-shell_scripts/stop_tcp_server.sh
-shell_scripts/stop_temp.sh
-shell_scripts/stop_web_client.sh
+shell_scripts/stop_miner.sh 
+shell_scripts/stop_tcp_server.sh 

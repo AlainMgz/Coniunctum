@@ -143,6 +143,10 @@ def setup():
     shutil.copyfile('server.py', 'Coniunctum/server.py')
     shutil.copyfile('setup.py', 'Coniunctum/setup.py')
 
+    #Copying requirements.txt
+    
+    shutil.copyfile('requirements.txt', 'Coniunctum/requirements.txt')
+
 
 
     # Create the archive ----------------------------------------------------

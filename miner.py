@@ -50,33 +50,34 @@ def broadcast_block(block):
 
 
 
+def mine(stop):
+    
+    with open('data/blockchain.json') as chain_file:
+        chain = json.load(chain_file)
+    previous_block = chain[-1]
+    proof = None
+    proof = proof_of_work(previous_block)
+    if proof:
+        previous_hash = chain_validation.hash(previous_block)
+        #with open("transactions_safe.json") as safe_tx_file:
+        #   safe_tx = json.load(safe_tx_file)
+        # ....
+        transactions = []
+        # Add miner reward transaction
+        transactions.append({'type' : 'reward',
+                             'receiver': node_address,
+                             'amount': 10,})
 
+        block = {'index': len(chain) + 1,
+                 'timestamp': str(datetime.datetime.now()),
+                 'miner': node_address,
+                 'proof': proof,
+                 'previous_hash': previous_hash,
+                 'transactions': transactions}
+        transactions = []
+        chain.append(block)
+        with open('data/blockchain.json', 'w') as blockchain_file:
+            json.dump(chain, blockchain_file)
+        broadcast_block(block)
 
-with open('data/blockchain.json') as chain_file:
-    chain = json.load(chain_file)
-previous_block = chain[-1]
-proof = None
-proof = proof_of_work(previous_block)
-if proof:
-    previous_hash = chain_validation.hash(previous_block)
-    #with open("transactions_safe.json") as safe_tx_file:
-    #   safe_tx = json.load(safe_tx_file)
-    # ....
-    transactions = []
-    # Add miner reward transaction
-    transactions.append({'type' : 'reward',
-                         'receiver': node_address,
-                         'amount': 10,})
-
-    block = {'index': len(chain) + 1,
-             'timestamp': str(datetime.datetime.now()),
-             'miner': node_address,
-             'proof': proof,
-             'previous_hash': previous_hash,
-             'transactions': transactions}
-    transactions = []
-    chain.append(block)
-    with open('data/blockchain.json', 'w') as blockchain_file:
-        json.dump(chain, blockchain_file)
-    broadcast_block(block)
 
