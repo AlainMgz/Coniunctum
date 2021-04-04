@@ -32,13 +32,6 @@ from miner import *
 
 coniunctum_version = "0.1 Alpha"
 
-# Change shell script permissions
-
-os.chmod('shell_scripts/stop_client.sh', 0o774)
-os.chmod('shell_scripts/start_miner.sh', 0o774)
-os.chmod('shell_scripts/stop_miner.sh', 0o774)
-os.chmod('shell_scripts/stop_tcp_server.sh', 0o774)
-os.chmod('shell_scripts/start_tcp_server.sh', 0o774)
 
 # Checking if it's the first time the Client is opened
 def first_time_check():
@@ -239,7 +232,7 @@ def running_app():
                 sleep(0.5)
                 if role == 2:
                     blockchain.scan_replace_chain()
-                    print("\nYour node is up and running.\nPress Ctrl+Z then type the 'bg' command to resume the process in the background. You can then close your shell, the node will continue to run.\nTo close the client, execute the 'stop_client.sh' shell script.\n")
+                    print("\nYour node is up and running.\nPress Ctrl+Z then type the 'bg' command to resume the process in the background. You can then close your shell, the node will continue to run.\nTo close the client, kill the coniunctum.py python process.\n")
                     """
                     try:
                         while True:
@@ -261,7 +254,7 @@ def running_app():
                         print("Please enter a valid number.")
                     if miner_input == 1:
                         
-                        print("\nYour node is up and running, press Ctrl+C to return to the menu (this will stop your node).\nPress Ctrl+Z then type the 'bg' command to resume the process in the background. You can then close your shell, the node will continue to run.\nTo close the client, execute the 'stop_client.sh' shell script.\n")
+                        print("\nYour node is up and running, press Ctrl+C to return to the menu (this will stop your node).\nPress Ctrl+Z then type the 'bg' command to resume the process in the background. You can then close your shell, the node will continue to run.\nTo close the client, kill the coniunctum.py python process.\n")
                         """
                         try:
                             while True:
@@ -286,7 +279,7 @@ def running_app():
                         run_miner = threading.Thread(target=mine, args=(lambda : stop_server_thread,))
                         run_miner.daemon = True
                         run_miner.start()
-                        print("\nYour node and your miner are up and running.\nPress Ctrl+Z then type the 'bg' command to resume the process in the background. You can then close your shell, the node will continue to run.\nTo close the client, execute the 'stop_client.sh' shell script.\n")
+                        print("\nYour node and your miner are up and running.\nPress Ctrl+Z then type the 'bg' command to resume the process in the background. You can then close your shell, the node will continue to run.\nTo close the client, kill the coniunctum.py python process.\n")
                         
                         sleep(2)
                         os.system('cls' if os.name == 'nt' else 'clear')
