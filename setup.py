@@ -81,16 +81,7 @@ def setup():
     except FileExistsError:
         pass
 
-    directory2 = "web_app"
 
-    parent_directory = pathlib.Path(__file__).parent.absolute() / "Coniunctum/"
-
-    path = os.path.join(parent_directory, directory2)
-
-    try:
-        os.mkdir(path)
-    except FileExistsError:
-        pass
 
 
     # Creating the source IP file
@@ -106,18 +97,6 @@ def setup():
 
     # Copying all the source code ----------------------------------------
 
-    # Copying shell scripts
-
-    shutil.copyfile('shell_scripts/start_miner.sh', 'Coniunctum/shell_scripts/start_miner.sh')
-    shutil.copyfile('shell_scripts/start_tcp_server.sh', 'Coniunctum/shell_scripts/start_tcp_server.sh')
-    shutil.copyfile('shell_scripts/start_temp.sh', 'Coniunctum/shell_scripts/start_temp.sh')
-    shutil.copyfile('shell_scripts/start_web_client.sh', 'Coniunctum/shell_scripts/start_web_client.sh')
-    shutil.copyfile('shell_scripts/stop_client.sh', 'Coniunctum/shell_scripts/stop_client.sh')
-    shutil.copyfile('shell_scripts/stop_miner.sh', 'Coniunctum/shell_scripts/stop_miner.sh')
-    shutil.copyfile('shell_scripts/stop_tcp_server.sh', 'Coniunctum/shell_scripts/stop_tcp_server.sh')
-    shutil.copyfile('shell_scripts/stop_temp.sh', 'Coniunctum/shell_scripts/stop_temp.sh')
-    shutil.copyfile('shell_scripts/stop_web_client.sh', 'Coniunctum/shell_scripts/stop_web_client.sh')
-
 
     # Copying modules
 
@@ -127,11 +106,6 @@ def setup():
     shutil.copyfile('modules/chain_validation.py', 'Coniunctum/modules/chain_validation.py')
     shutil.copyfile('modules/get_ip.py', 'Coniunctum/modules/get_ip.py')
 
-
-    # Copying web app files
-
-    shutil.copyfile('web_app/web_app.py', 'Coniunctum/web_app/web_app.py')
-    shutil.copyfile('web_app/web_client.py', 'Coniunctum/web_app/web_client.py')
 
     # Copying root files
 
