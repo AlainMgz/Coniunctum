@@ -1,3 +1,4 @@
-kill $(ps -x | grep python3\ web_app/web_client.py | awk 'NR==1{print $1, $10}')
-kill $(ps -x | grep python3\ coniunctum.py | awk 'NR==1{print $1, $10}')
-kill $(ps -x | grep python3\ server.py | awk 'NR==1{print $1, $10}')
+shell_scripts/stop_miner.sh
+shell_scripts/stop_tcp_server.sh
+shell_scripts/stop_temp.sh
+shell_scripts/stop_web_client.sh

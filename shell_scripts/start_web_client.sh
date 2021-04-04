@@ -1,1 +1,1 @@
-python3 web_app/web_client.py &
+sudo systemctl restart coniunctum.service &
