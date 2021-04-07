@@ -2,7 +2,7 @@
 - A simple cryptocurrency / blockchain Python project. Based on proof-of-work and public-key cryptography.
 Made to open up blockchain technology to newcomers in the developing world.
 
-- Whitepaper available here : [Coniunctum.pdf](https://github.com/AlainMgz/Coniunctum/files/6269872/Coniunctum.pdf)
+- Whitepaper available here : [Coniunctum.pdf](https://github.com/AlainMgz/Coniunctum/files/6270554/Coniunctum.pdf)
 
 - Install Instructions (Linux only, for the moment):
   - Requirements : 
