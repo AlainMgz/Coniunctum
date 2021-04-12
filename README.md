@@ -4,14 +4,15 @@ Made to open up blockchain technology to newcomers in the developing world.
 
 - Whitepaper available here : [Coniunctum.pdf](https://github.com/AlainMgz/Coniunctum/files/6270554/Coniunctum.pdf)
 
-- Install Instructions (Linux only, for the moment):
+- Install Instructions works on Linux and Windows, should also on Mac but not tested. Also works on Android using Termux:
   - Requirements : 
-    - Install Python 3+, python3-setuptools and python3-pip (or make sure you have it)
+    - Install Python 3+ (or make sure you have it, `python3 -V` should output something similar to `Python 3.9.2`, this program is using `python3` and not `python`)
     - Clone this repository or download the latest verison [here](https://github.com/AlainMgz/Coniunctum/releases) 
     - Install the needed pip packages with : `python3 -m pip install -r requirements.txt`
-  - Run the coniunctum.py file with Python 3+.
-  - For now the client only works on local network so if it's your first time running Coniunctum on your local network, please contact me for detailed installation      instructions.
-
+  
+  - [ Only for the first client you install : ] For now the client only works on local networks so before installing it for the first time on your network, you need to modify the `source_data/ip_file.json` and put the IP address of your first client. It will generate a genesis block and an installation archive (when you run the client for the first time) customized for your network that you need to install the client on other machines of your network (for which you will not need to modify the `source_data/ip_file.json` file).
+  - Run the client with `python3 coniunctum.py`.
+  - If you have trouble, please contact me I will be happy to help. If you find a bug or problem please report it, it helps a lot. And obviously contributions are open :)
 - Contact : 
   - Email : airwaks98701@protonmail.ch
   - Twitter : @adotmgz
