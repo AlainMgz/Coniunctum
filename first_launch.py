@@ -8,6 +8,7 @@ Created on Mon Feb 22 09:46:30 2021
 
 import os
 from uuid import uuid4
+import datetime
 import json
 import requests
 from subprocess import call
@@ -81,6 +82,30 @@ def first_launch_setup():
 
     # Setup accordingly to the user's role in the network -------------------------------------------------------
     
+    # Check if it's the time the client is installed on a network (basically if the source node is the current node)
+    source_ip = get_source_ip()
+    ip_local = get_local_ip()
+    if ip_local == source_ip:
+        json_nodes = {}
+        json_nodes['nodes'] = []
+        json_nodes['nodes'].append(ip_local)
+        with open("data/nodes.json", "w") as nodes_file:
+            json.dump(json_nodes, nodes_file)
+        print("Generating a new blockchain...")
+        genesis_chain = []
+        genesis_block = {'index': 1,
+                         'timestamp': str(datetime.datetime.now()),
+                         'miner': node_address,
+                         'proof': 1,
+                         'previous_hash': "0"}
+        genesis_chain.append(genesis_block)
+        need_setup_json = {}
+        need_setup_json['first_time_open'] = []
+        need_setup_json['first_time_open'].append({"answer": 1})
+        with open("data/need_setup.json", "w") as need_setup:
+            json.dump(need_setup_json, need_setup)
+        print("New Coniunctum Network has been initialized, the client will now turn off and you will be able to run it normally right after.")
+        return False  
     # Setup a light node / wallet
     if role == 1:
         # A wallet only needs to be connected to it's source node, so we only add the source node in the data/nodes.json file

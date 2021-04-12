@@ -23,7 +23,7 @@ from server import *
 from client import req_blockchain
 
 # Setting the version of the client
-coniunctum_version = "0.1 Alpha"
+coniunctum_version = "0.2 Alpha"
 
 # Checking if it's the first time the Client is opened using the need_setup.json file (value 0 means it is the first opening)
 def first_time_check():
