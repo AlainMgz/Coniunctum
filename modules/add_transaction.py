@@ -13,8 +13,7 @@ import pickle
 from modules.get_ip import get_local_ip
 
 ip_local = get_local_ip()
-
-print(blockchain.nodes)
+# This file is for later, don't know why I created it now
 """            
 try:
     with open('data.json') as data_file:

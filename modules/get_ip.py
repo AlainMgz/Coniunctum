@@ -9,6 +9,7 @@ Created on Tue Feb 23 17:20:24 2021
 import socket
 import json
 
+# Function that returns the node's IP address (it's only local for now)
 def get_local_ip():
 	try:
 		with open('data/data.json') as datafile:
@@ -19,7 +20,7 @@ def get_local_ip():
 	except FileNotFoundError:
 		print("Missing 'data/data.json' file, please re-install the Client")
 	
-
+# Function that returns the source node's IP address
 def get_source_ip():
 	try:
 		with open('source_data/ip_file.json') as ip_file:
