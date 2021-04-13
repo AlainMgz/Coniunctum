@@ -29,7 +29,7 @@ def broadcast_block(block):
             if d != ip_local:
                 try:
                     send_block(block, d)
-                except ConnectionRefusedError:
+                except (ConnectionRefusedError, OSError):
                     pass
             else:
                 pass

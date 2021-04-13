@@ -10,7 +10,6 @@ import os
 from uuid import uuid4
 import datetime
 import json
-import requests
 from subprocess import call
 import threading
 from time import sleep

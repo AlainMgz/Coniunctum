@@ -10,7 +10,6 @@ import json
 import os
 import pathlib
 import shutil
-import requests
 import socket
 from modules.get_ip import get_local_ip
 
