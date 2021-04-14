@@ -1,8 +1,9 @@
+
 # Coniunctum
 - A simple cryptocurrency / blockchain Python project. Based on proof-of-work and public-key cryptography.
 Made to open up blockchain technology to newcomers in the developing world.
 
-- Whitepaper available here : [Coniunctum.pdf](https://github.com/AlainMgz/Coniunctum/Coniunctum.pdf)
+- Whitepaper available here : [Coniunctum.pdf](https://github.com/AlainMgz/Coniunctum/files/6313872/Coniunctum.pdf)
 - Detailed installation and usage instructions [here](https://github.com/AlainMgz/Coniunctum/wiki)
 
 - Install Instructions (works on Linux and Windows, should also on Mac but not tested. Also works on Android using Termux) :
