@@ -22,8 +22,6 @@ from blockchain import Blockchain
 from server import *
 from client import req_blockchain
 
-# Setting the version of the client
-coniunctum_version = "0.2 Alpha"
 
 # Checking if it's the first time the Client is opened using the need_setup.json file (value 0 means it is the first opening)
 def first_time_check():
@@ -47,7 +45,7 @@ def first_time_check():
         print("File 'data/need_setup.json' is missing. Please download it from github and change it to it's last value (if you know it) or reinstall the Client with a new download")
         quit()
 
-first_time_check()
+
 
 # Defining the function called in a thread to have live blockchain updates
 def update_data_live(stop, blockchain, node_address):
@@ -80,6 +78,8 @@ def update_data_live(stop, blockchain, node_address):
 # Running a simple wallet ----------------------------------------------------------------------------------------------------
 # A wallet just needs these 5 basic options
 def run_wallet():
+    # Setting the version of the client
+    coniunctum_version = "0.2 Alpha"
     run = True
     # Starting the TCP server in a seperate thread
     print("The wallet is starting, it might take some time as it needs to sync with the blockchain.")
@@ -146,7 +146,9 @@ def run_wallet():
 
 
 # Defining the main function
-def running_app():   
+def running_app(role): 
+    # Setting the version of the client
+    coniunctum_version = "0.2 Alpha"
     # Getting the current node's address
     try:
         with open('data/data.json') as datafile:
@@ -348,19 +350,21 @@ def running_app():
             sleep(2)
 
 # Checking what the role of the user and starting the according fucntion -----------------------------
-try:
-    with open('data/data.json') as datafile:
-        data = json.load(datafile)
-        for d in data['user_data']:
-            role = d['role']
-                
-except FileNotFoundError:
-    print("Missing 'data/data.json' file.")
-    quit()
+def run():
+    first_time_check()
+    try:
+        with open('data/data.json') as datafile:
+            data = json.load(datafile)
+            for d in data['user_data']:
+                role = d['role']
+                    
+    except FileNotFoundError:
+        print("Missing 'data/data.json' file.")
+        quit()
 
-if role == 2 or role == 3:
-    running_app()
-elif role == 1:
-    run_wallet()
-else:
-    print("Corrupted data/data.json file. Please revert to a previous working state.")
+    if role == 2 or role == 3:
+        running_app(role)
+    elif role == 1:
+        run_wallet()
+    else:
+        print("Corrupted data/data.json file. Please revert to a previous working state.")
