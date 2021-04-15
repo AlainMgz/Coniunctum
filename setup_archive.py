@@ -80,7 +80,7 @@ def setup():
     shutil.copyfile('first_launch.py', 'Coniunctum/first_launch.py')
     shutil.copyfile('miner.py', 'Coniunctum/miner.py')
     shutil.copyfile('server.py', 'Coniunctum/server.py')
-    shutil.copyfile('setup.py', 'Coniunctum/setup.py')
+    shutil.copyfile('setup_archive.py', 'Coniunctum/setup_archive.py')
 
     #Copying requirements.txt
     shutil.copyfile('requirements.txt', 'Coniunctum/requirements.txt')
