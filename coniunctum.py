@@ -368,3 +368,4 @@ def run():
         run_wallet()
     else:
         print("Corrupted data/data.json file. Please revert to a previous working state.")
+run()
