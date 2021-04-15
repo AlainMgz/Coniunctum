@@ -15,7 +15,7 @@ import threading
 from time import sleep
 from modules.chain_validation import hash, is_chain_valid
 from modules.get_ip import get_local_ip, get_source_ip
-from setup import setup
+from setup_archive import setup
 from server import *
 from client import *
 
